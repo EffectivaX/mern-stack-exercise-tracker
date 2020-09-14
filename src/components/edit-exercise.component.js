@@ -25,21 +25,24 @@ export default class EditExercise extends Component {
 	}
 
 	componentDidMount() {
-		axios.get('https://localhost:5000/exercises/'+this.props.match.params.id)
+		axios.get('http://localhost:5000/exercises/'+this.props.match.params.id)
 			.then(response => {
 				this.setState({
 					username: response.data.username,
-					description: response.data.decription,
+					description: response.data.description,
 					duration: response.data.duration,
 					date: new Date(response.data.date)
 				})
+			})
+			.catch(function (error){
+				console.log(error);
 			})
 
 		axios.get('http://localhost:5000/users/')
 			.then(response => {
 				if (response.data.length > 0) {
 					this.setState({
-						users: response.data.map(user => user.username),
+						users: response.data.map(user => user.username)
 					})
 				}
 			})
@@ -82,15 +85,10 @@ export default class EditExercise extends Component {
 		console.log(exercise);
 
 		// database connection using axios
-		axios.post('http://localhost:5000/exercises/update'+ this.props.match.id, exercise)
+		axios.post('http://localhost:5000/exercises/update'+ this.props.match.params.id, exercise)
 			.then(res => console.log(res.data));
 
-			this.setState({
-				username: '',
-				description: '',
-				duration: '',
-				date: new Date()
-			})
+		window.location = ('/');
 	}
 
 
@@ -111,7 +109,7 @@ export default class EditExercise extends Component {
 							return <option
 								key={user}
 								value={user}>{user}
-							</option>
+							</option>;
 						})
 					}
 				</select>
