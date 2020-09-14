@@ -32,19 +32,19 @@ export default class CreateExercises extends Component {
 
 	onChangeUsername(e) {
 		this.setState({
-			username: e.targe.value
+			username: e.target.value
 		});
 	}
 
 	onChangeDescription(e) {
 		this.setState({
-			description: e.targe.value
+			description: e.target.value
 		});
 	}
 
 	onChangeDuration(e) {
 		this.setState({
-			duration: e.targe.value
+			duration: e.target.value
 		});
 	}
 
