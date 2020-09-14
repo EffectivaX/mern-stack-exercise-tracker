@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Exercise = props => (
     <tr>
@@ -9,7 +10,7 @@ const Exercise = props => (
         <td>{props.exercise.duration} minutes</td>
         <td>{props.exercise.date.substring(0, 10)}</td>
         <td>
-            <Link to={"/edit/"+props.exercise._id}>Edit</Link> | <a href="#" onClick={() => {props.deleteExercise(props.exercise._id)}}>Delete</a>
+            <Link to={"/edit/"+props.exercise._id}><FontAwesomeIcon icon="pen-square" size="lg" /></Link>  <a href="#" onClick={() => {props.deleteExercise(props.exercise._id)}}><FontAwesomeIcon icon="trash-alt" size="lg" /></a>
         </td>
     </tr>
 )

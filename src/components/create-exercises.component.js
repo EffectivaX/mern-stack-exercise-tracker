@@ -16,7 +16,7 @@ export default class CreateExercises extends Component {
 
 		this.state= {
 			username: '',
-			decription: '',
+			description: '',
 			duration: 0,
 			date: new Date(),
 

@@ -16,7 +16,7 @@ export default class EditExercise extends Component {
 
 		this.state= {
 			username: '',
-			decription: '',
+			description: '',
 			duration: 0,
 			date: new Date(),
 
@@ -85,7 +85,7 @@ export default class EditExercise extends Component {
 		console.log(exercise);
 
 		// database connection using axios
-		axios.post('http://localhost:5000/exercises/update'+ this.props.match.params.id, exercise)
+		axios.post('http://localhost:5000/exercises/update/'+ this.props.match.params.id, exercise)
 			.then(res => console.log(res.data));
 
 		window.location = ('/');
@@ -143,7 +143,7 @@ export default class EditExercise extends Component {
 			</div>
 
 			<div className="form-group">
-				<input type="submit" value="Edit Exercise Log" className="btn btn-primary" />
+				<input type="submit" value="Update Exercise Log" className="btn btn-primary" />
 			</div>
 		</form>
 	  </div>
