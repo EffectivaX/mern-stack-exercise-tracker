@@ -9,10 +9,6 @@ class Footer extends Component {
                 <a href="https://github.com/xeroxzen">Andile Jaden M </a>
                 <span>&copy; {(new Date().getFullYear())} Nexuslabs, Inc.</span>
               </div>
-              <div class="ml-auto">
-                <span>Powered by </span>
-                <a href="#"> Google Jr</a>
-              </div>
             </footer>
         </div>
     )
